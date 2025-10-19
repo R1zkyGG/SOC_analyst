@@ -1,0 +1,105 @@
+🧭 Roadmap Belajar SIEM (Wazuh Edition)
+
+🎯 Durasi total: 4–6 minggu (fleksibel sesuai waktu kamu)
+
+🗓️ Minggu 1 — Pahami Dasar SIEM & Log
+Tujuan: ngerti dulu konsep dan fungsi SIEM biar nggak asal install.
+📘 Materi:
+
+Apa itu SIEM dan fungsinya dalam SOC
+Jenis-jenis log (system log, auth log, network log)
+Struktur log (timestamp, event, severity)
+Dasar syslog dan log rotation di Linux
+
+🧠 Latihan:
+# cat /var/log/auth.log | tail -n 20
+# grep "Failed password" /var/log/auth.log
+-----------------------------------------------------------------------------
+
+🗓️ Minggu 2 — Instalasi & Setup Wazuh
+Tujuan: punya SIEM berjalan di lokal untuk latihan.
+
+🧰 Tools:
+Ubuntu (host)
+Wazuh (Server + Dashboard)
+Browser (akses dashboard)
+
+🧱 Langkah:
+
+- Install Wazuh
+  #curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
+  #sudo bash wazuh-install.sh -a
+- Akses di browser:
+👉 https://localhost (login default akan muncul saat install)
+- Jelajahi dashboard (menu: Overview, Security Events, Rules)
+-----------------------------------------------------------------------------
+
+🗓️ Minggu 3 — Kirim Log & Analisis Event
+Tujuan: ngerti alur dari log → event → alert.
+
+📡 Materi:
+
+Install Wazuh agent di Ubuntu atau VM lain
+Kirim log ke server SIEM
+Analisis alert di dashboard
+
+🧠 Latihan:
+
+Coba login gagal berkali-kali ke SSH (ssh wronguser@localhost)
+Lihat apakah Wazuh mendeteksi brute-force attempt
+Buka “Security Events” → lihat rule yang aktif
+-----------------------------------------------------------------------------
+
+🗓️ Minggu 4 — Rule Correlation & Alerting
+Tujuan: paham gimana SIEM tahu sesuatu itu ancaman.
+
+📘 Materi:
+
+Konsep Correlation Rules
+Threshold & Frequency (misal: 5 login gagal dalam 1 menit)
+Membuat alert custom
+
+🧠 Latihan:
+
+-Edit rule file di /var/ossec/rules/local_rules.xml
+-Buat rule custom untuk deteksi aktivitas tertentu
+(misal: user root login di luar jam kerja)
+-----------------------------------------------------------------------------
+
+🗓️ Minggu 5 — Visualisasi & Reporting
+Tujuan: tampilkan insight dari data keamanan.
+
+📊 Materi:
+-Dashboard & Visualization (Kibana)
+-Filter berdasarkan IP, Severity, dll
+-Generate laporan keamanan bulanan
+
+🧠 Latihan:
+
+Buat dashboard berisi:
+Top 10 source IP
+Jumlah login gagal per hari
+Event severity distribution
+-----------------------------------------------------------------------------
+
+🗓️ Minggu 6 — Simulasi Serangan & Incident Response
+Tujuan: rasakan pengalaman seperti SOC Analyst sungguhan.
+
+⚔️ Materi:
+-Simulasi brute-force, port scanning, dan malware event
+-Analisis hasil alert dari SIEM
+-Tulis laporan singkat incident (Incident Report)
+
+🧠 Tools tambahan:
+
+nmap untuk scanning
+hydra untuk brute-force
+Wazuh Dashboard untuk analisis hasil
+
+🧾 Laporan contoh:
+#Incident: SSH Brute Force
+#Date: 18 Oct 2025
+#Source IP: 192.168.1.50
+#Target: Ubuntu Server
+#Description: Multiple failed login attempts detected (Rule 5712)
+#Action: Blocked source IP via firewall

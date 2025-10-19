@@ -1,0 +1,26 @@
+#SIEM "security information and event management"
+
+Fungsi SIEM :
+
+Fungsi			penjelasan 
+- log management	mengumpulkan semua log di satu tempat 
+- correlation		menghubungkan event berbeda jadi 1 pola serangan 
+- alerting		memberi notifiskasi otomatis saat ada aktifitas mencurigakan
+- dasboarding		menampilkan visualisasi serangan & status keamanan 
+- reporting		laporan keamanan, kepatuhan, dan audit
+-----------------------------------------------------------------------------
+
+Tools" SIEM 
+
+| Tool                                      | Tipe        | Keterangan                                    |
+| ----------------------------------------- | ----------- | --------------------------------------------- |
+| Splunk                                    | Komersial   | Powerful tapi mahal                           |
+| IBM QRadar                                | Komersial   | Banyak dipakai di perusahaan besar            |
+| ELK Stack (Elastic, Logstash, Kibana)     | Open Source | Fleksibel dan banyak dipakai untuk latihan    |
+| Wazuh                                     | Open Source | Integrasi dengan ELK, cocok buat SOC beginner |
+| Graylog                                   | Open Source | Simpel dan ringan                             |
+
+-----------------------------------------------------------------------------
+
+
+
