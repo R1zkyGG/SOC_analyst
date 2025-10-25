@@ -1,0 +1,34 @@
+##SIEM##
+
+what is SIEM ? 
+SIEM "security information and event management" 
+
+objective / tujuan :
+- collect log from multiple sytem (sever, firewall, endpoint)
+- analyst log to look for signs of attack
+- give alert when there is suspicious activity
+- make a security report 
+
+##where ?##
+in linux, log usualy save in folder : 
+#/var/log
+try run in terminal 
+#ls /var/log
+
+you will see many log files like : 
+- auth.log
+- syslog 
+- kern.log
+- dpkg.log 
+
+##reading practice##
+example login log failed (in auth.log)
+revy@ubuntu$ Oct 18 20:05:33 ubuntu sshd[1234]: Failed password for invalid user admin from 192.168.1.10 port 55212 ssh2
+
+Arti-nya:
+Tanggal: Oct 18
+Program: sshd
+Event: login gagal (Failed password)
+User: admin
+IP sumber: 192.168.1.10
+

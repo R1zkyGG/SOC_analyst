@@ -1,0 +1,22 @@
+#start Wazuh 
+sudo systemctl start wazuh-manager
+sudo systemctl start opensearch
+sudo systemctl start wazuh-dashboard
+sudo systemctl start filebeat
+
+#stop wazuh sudo systemctl stop wazuh-manager
+sudo systemctl stop wazuh-dashboard
+sudo systemctl stop opensearch
+sudo systemctl stop filebeat
+
+#aktif otomatis saat boot 
+sudo systemctl disable wazuh-manager
+sudo systemctl disable wazuh-dashboard
+sudo systemctl disable opensearch
+sudo systemctl disable filebeat
+
+#service indexer 
+- sudo systemctl stop wazuh-indexer
+- sudo systemctl disable wazuh-indexer
+- sudo systemctl start wazuh-indexer
+

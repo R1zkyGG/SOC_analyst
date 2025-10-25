@@ -1,0 +1,35 @@
+#step 1 
+- sudo apt update && sudo apt upgrade -y
+
+#step 2 
+- sudo apt install curl apt-transport-https lsb-release gnupg -y
+
+=>Install and run installer wazuh
+
+#step 3 
+- curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
+- sudo bash wazuh-install.sh -a
+
+keterangan : 
+#-a artinya all-in-one, jadi otomatis install:
+#Wazuh Manager (backend)
+#Wazuh Indexer (search engine)
+#Wazuh Dashboard (frontend web)
+=> wait until the process is successful  (can 10-15 minuts)
+
+#note down the login account 
+example : 
+********************************************************************
+   Wazuh installation finished successfully.
+
+   You can access the Wazuh dashboard at: https://<your-ip>
+   Username: admin
+   Password: <random-generated-password>
+********************************************************************
+
+#access dashboard 
+- https://ip-address-server
+
+#explore dashboard
+
+
