@@ -1,5 +1,5 @@
 #what is fail2ban? "apa itu fail2ban?"
--fail2ban is open source software designed to protect servers from addtacks such as brute-force and denial-of-service (DOS) 
+-fail2ban is open source software designed to protect servers from attacker such as brute-force and denial-of-service (DOS) 
  "Fail2Ban adalah perangkat lunak sumber terbuka yang dirancang untuk melindungi server dari serangan seperti brute-force dan denial-of-service (DoS)"
 
 #how to use ? "bagaimana cara memakainya?" 
